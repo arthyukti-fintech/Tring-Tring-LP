@@ -5,7 +5,8 @@ import KeertiPrasad from '../assets/KeertiPrasad.jpeg'
 import ManjunathJ from '../assets/ManjunathJ.png'
 import Priyanshu from '../assets/Priyanshu.png'
 import Arman from '../assets/Arman.png'
-// Team member data (replace images with your own)
+
+// Team member data
 const teamMembers = [
   {
     name: "Keerthi Prasad",
@@ -33,7 +34,7 @@ const teamMembers = [
   },
 ];
 
-// Values data
+// Values data (original)
 const values = [
   {
     title: "Simplicity",
@@ -57,8 +58,32 @@ const values = [
   },
 ];
 
+// New Core Values data
+const coreValues = [
+  {
+    title: "Transparency",
+    description: "No hidden pricing or complicated fees.",
+    icon: "🔍",
+  },
+  {
+    title: "Human Connection",
+    description: "Real conversations between customers and restaurants.",
+    icon: "💬",
+  },
+  {
+    title: "Local Support",
+    description: "Helping neighborhood restaurants grow.",
+    icon: "🏪",
+  },
+  {
+    title: "Simple Technology",
+    description: "Technology that works with people, not against them.",
+    icon: "⚙️",
+  },
+];
+
 function About() {
-  // Simple scroll animation refs (optional)
+  // Simple scroll animation refs
   const sectionRefs = useRef([]);
 
   useEffect(() => {
@@ -107,7 +132,7 @@ function About() {
           font-weight: 800;
           color: black;
         }
-            .section-about {
+        .section-about {
           font-family: 'Bricolage Grotesque', sans-serif;
           font-weight: 800;
           color: white;
@@ -123,14 +148,14 @@ function About() {
           color: ${colors.primary};
         }
 
-       .team-img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  object-position: top;
-  border-radius: 50%;
-  border: 3px solid ${colors.primary}30;
-}
+        .team-img {
+          width: 150px;
+          height: 150px;
+          object-fit: cover;
+          object-position: top;
+          border-radius: 50%;
+          border: 3px solid ${colors.primary}30;
+        }
          
         .team-card:hover .team-img {
           border-color: ${colors.primary};
@@ -151,21 +176,42 @@ function About() {
 
         {/* ===== HERO SECTION ===== */}
         <section className="about-hero relative overflow-hidden px-6 md:px-12 lg:px-16 py-24 md:py-32 min-h-[70vh] md:min-h-[80vh] flex items-center">
-
-          <div className="max-w-7xl mx-auto text-center relative z-10">
-            <h1 className="section-about text-4xl md:text-5xl lg:text-6xl mb-4">
+          <div className="max-w-5xl mx-auto text-center relative z-10">
+            <h1 className="section-about text-4xl md:text-5xl lg:text-6xl mb-6">
               About <span style={{ color: colors.primary }}>Tring Tring</span>
             </h1>
-
-            <p className="section-sub text-lg md:text-xl max-w-2xl mx-auto">
-              We believe ordering food should be simple, personal, and connected.
-              No apps, no hassle — just you and your favourite restaurant.
+            <p className="section-sub text-lg md:text-xl max-w-3xl mx-auto mb-10">
+              We believe food ordering should be simple, transparent, and human.
             </p>
+            <div className="space-y-6 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+              <p className="section-sub">
+                Most food apps force restaurants into complex menus and pricing systems,
+                creating confusion for both customers and restaurants.
+              </p>
+              <p className="section-sub">
+                <span style={{ color: colors.primary, fontWeight: "600" }}>
+                  Tring Tring
+                </span>{" "}
+                was built to change that.
+              </p>
+              <p className="section-sub">
+                By letting customers speak directly with restaurants, we bring back
+                clarity and trust to food ordering while still providing the convenience
+                of digital payments and delivery.
+              </p>
+              <p
+                className="text-lg md:text-xl font-semibold mt-6"
+                style={{ color: colors.primary }}
+              >
+                Our goal is simple:
+              </p>
+              <p className="text-lg md:text-xl font-semibold">
+                Make food ordering easier for customers and fairer for restaurants.
+              </p>
+            </div>
           </div>
-
-          {/* Zigzag wave at bottom */}
           <div className="zigzag-bottom">
-            <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style={{ width: "100%", height: "auto" }}>
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style={{ width: "100%" }}>
               <path
                 d="M0,40 L80,10 L160,50 L240,20 L320,60 L400,30 L480,70 L560,40 L640,75 L720,45 L800,70 L880,35 L960,60 L1040,25 L1120,50 L1200,20 L1280,45 L1360,15 L1440,40 L1440,80 L0,80 Z"
                 fill={colors.primaryBg}
@@ -178,7 +224,6 @@ function About() {
               />
             </svg>
           </div>
-
         </section>
 
         {/* ===== OUR STORY ===== */}
@@ -199,7 +244,6 @@ function About() {
                 your neighborhood restaurant, speak to a real person, and get your meal
                 without unnecessary steps.
               </p>
-
               <p>
                 In 2025, entrepreneur Keerthi Prasad, along with co-founder Manjunath
                 Jagadish, set out to build a different kind of platform. Their vision was
@@ -208,7 +252,6 @@ function About() {
                 restaurants directly. No downloads, no accounts, and no middlemen —
                 just a simple and reliable connection.
               </p>
-
               <p>
                 Today, Tring Tring is growing into a community of restaurants and customers
                 who value simplicity, trust, and genuine human interaction. We’re not just
@@ -219,7 +262,7 @@ function About() {
           </div>
         </section>
 
-        {/* ===== OUR VALUES ===== */}
+        {/* ===== OUR VALUES (Original) ===== */}
         <section
           ref={(el) => (sectionRefs.current[1] = el)}
           className="px-6 md:px-12 lg:px-16 py-16 md:py-24 bg-black/20 opacity-0 translate-y-10 transition-all duration-700"
@@ -264,9 +307,6 @@ function About() {
                   key={idx}
                   className="team-card glass-card p-6 rounded-xl text-center hover:shadow-xl transition-all"
                 >
-                  <div>
-
-                  </div>
                   <img
                     src={member.image}
                     alt={member.name}
@@ -285,35 +325,31 @@ function About() {
           </div>
         </section>
 
-        {/* ===== IMPACT STATS ===== */}
-        {/* <section
+        {/* ===== CORE VALUES (New Section) ===== */}
+        <section
           ref={(el) => (sectionRefs.current[3] = el)}
           className="px-6 md:px-12 lg:px-16 py-16 md:py-24 bg-black/20 opacity-0 translate-y-10 transition-all duration-700"
         >
           <div className="max-w-7xl mx-auto">
             <h2 className="section-title text-3xl md:text-4xl mb-12 text-center">
-              Our Impact
+              Core Values
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="stat-number text-4xl md:text-5xl">500+</div>
-                <p className="section-sub mt-2">Restaurant Partners</p>
-              </div>
-              <div>
-                <div className="stat-number text-4xl md:text-5xl">10K+</div>
-                <p className="section-sub mt-2">Happy Users</p>
-              </div>
-              <div>
-                <div className="stat-number text-4xl md:text-5xl">4.9★</div>
-                <p className="section-sub mt-2">App Store Rating</p>
-              </div>
-              <div>
-                <div className="stat-number text-4xl md:text-5xl">30+</div>
-                <p className="section-sub mt-2">Cities Covered</p>
-              </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {coreValues.map((value, idx) => (
+                <div
+                  key={idx}
+                  className="glass-card p-6 rounded-xl text-center hover:shadow-xl transition-all"
+                >
+                  <div className="text-5xl mb-4">{value.icon}</div>
+                  <h3 className="text-xl font-semibold mb-2" style={{ color: 'black' }}>
+                    {value.title}
+                  </h3>
+                  <p className="section-sub text-sm">{value.description}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </section> */}
+        </section>
 
         {/* ===== JOIN US CTA ===== */}
         <section className="px-6 md:px-12 lg:px-16 py-16 md:py-24 text-center">

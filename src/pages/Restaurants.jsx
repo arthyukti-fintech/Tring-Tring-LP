@@ -33,7 +33,7 @@ const benefits = [
 
 
 // NEW: Frequently Asked Questions
- const faqs = [
+const faqs = [
   {
     question: "Is it really free to join?",
     answer:
@@ -200,30 +200,82 @@ function Restaurants() {
       <div style={{ backgroundColor: colors.primaryBg, color: "white" }}>
 
         {/* ===== HERO SECTION ===== (existing, unchanged) */}
-        <section className="restaurants-hero relative overflow-hidden px-6 md:px-12 lg:px-16 py-24 md:py-32 min-h-[70vh] md:min-h-[80vh] flex items-center">
+        <section className="restaurants-hero relative overflow-hidden px-6 md:px-12 lg:px-16 py-24 md:py-32 min-h-[75vh] flex items-center">
 
-          <div className="max-w-7xl mx-auto text-center relative z-10">
-            <h1 className="section-partner text-4xl md:text-5xl lg:text-6xl mb-4">
-              Partner with <span style={{ color: colors.primary }}>Tring Tring</span>
-            </h1>
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
 
-            <p className="section-sub text-lg md:text-xl max-w-2xl mx-auto">
-              Join a new way of connecting with customers – simple, direct, and
-              commission-free.
-            </p>
+            {/* LEFT CONTENT */}
+            <div>
+
+              <h1 className="section-partner text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
+                More Orders. <br />
+                Less <span style={{ color: colors.primary }}>Complexity.</span>
+              </h1>
+
+              <p className="section-sub text-lg md:text-xl mb-8 max-w-xl">
+                Join <span style={{ color: colors.primary }}>Tring Tring</span> and connect
+                directly with nearby customers who prefer to talk before ordering.
+              </p>
+
+              {/* BENEFITS */}
+              <div className="space-y-4 mb-10">
+
+                <div className="flex items-start gap-3">
+                  <span style={{ color: colors.primary }} className="text-xl">✔</span>
+                  <p className="section-sub">No complicated menu setup</p>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <span style={{ color: colors.primary }} className="text-xl">✔</span>
+                  <p className="section-sub">Direct communication with customers</p>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <span style={{ color: colors.primary }} className="text-xl">✔</span>
+                  <p className="section-sub">Faster order confirmation</p>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <span style={{ color: colors.primary }} className="text-xl">✔</span>
+                  <p className="section-sub">More local visibility</p>
+                </div>
+
+              </div>
+
+              {/* CTA BUTTON */}
+              <button className="submit-btn">
+                Join as a Restaurant
+              </button>
+
+            </div>
+
+            {/* RIGHT SIDE VISUAL */}
+            <div className="hidden lg:flex justify-center">
+              <div
+                style={{
+                  background: "rgba(255,255,255,0.03)",
+                  border: "1px solid rgba(255,255,255,0.05)",
+                  borderRadius: "20px",
+                  padding: "40px",
+                  textAlign: "center"
+                }}
+              >
+                <div style={{ fontSize: "70px" }}>📞</div>
+                <p className="section-sub mt-4">
+                  Customers call you directly to place orders.
+                </p>
+              </div>
+            </div>
+
           </div>
 
+          {/* ZIGZAG BOTTOM */}
           <div className="zigzag-bottom">
-            <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style={{ width: "100%", height: "auto" }}>
+            <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style={{ width: "100%" }}>
               <path
                 d="M0,40 L80,10 L160,50 L240,20 L320,60 L400,30 L480,70 L560,40 L640,75 L720,45 L800,70 L880,35 L960,60 L1040,25 L1120,50 L1200,20 L1280,45 L1360,15 L1440,40 L1440,80 L0,80 Z"
                 fill={colors.primaryBg}
-                opacity="0.2"
-              />
-              <path
-                d="M0,50 L80,20 L160,60 L240,30 L320,70 L400,40 L480,80 L560,50 L640,80 L720,50 L800,75 L880,40 L960,65 L1040,30 L1120,55 L1200,25 L1280,50 L1360,20 L1440,45 L1440,80 L0,80 Z"
-                fill={colors.primaryBg}
-                opacity="0.3"
+                opacity="0.25"
               />
             </svg>
           </div>

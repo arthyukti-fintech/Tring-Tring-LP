@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import TrinLogo from "../assets/TringTringWithouttext.png"
+
 // ── colour tokens ─────────────────────────────────────────────────────────────
 const C = {
   primary: "#E8603C",   // warm amber-orange
   primaryBg: "rgba(15,11,9,0.96)",
   textDark: "#1a1209",
   gold: "#f0a050",
+  cream: "#FFF4CC",     // light background / logo colour when scrolled
 };
 
 // ── RollLink ──────────────────────────────────────────────────────────────────
@@ -55,16 +57,18 @@ export default function Navbar() {
   /* pill geometry */
   const pillBg = scrolled
     ? "linear-gradient(135deg,rgba(20,13,8,0.72) 0%,rgba(30,17,9,0.68) 100%)"
-    : "#FFF4CC";
+    : C.cream;
 
-  /* text colour flips based on scroll */
+  /* text colours */
   const textColor = scrolled ? "#ffffff" : "#1a1209";
-  const hamColor = scrolled ? "##ffffff" : "#1a1209";
+  const hamColor = scrolled ? "#ffffff" : "#1a1209";
+  // Logo colour: cream when scrolled (dark bg), primary red when not scrolled (light bg)
+  const logoColor = scrolled ? C.cream : C.primary;
 
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500&family=Dancing+Script:wght@700&display=swap');
 
         /* ── pill wrapper ── */
         .nav-pill {
@@ -154,7 +158,7 @@ export default function Navbar() {
         }
 
         .logo-name {
-          font-family:'Syne',sans-serif;
+          font-family:'Syne',sans-serif;  /* fallback – will be overridden inline */
           font-weight:800;
           font-size:1.1rem;
           letter-spacing:0.04em;
@@ -316,7 +320,6 @@ export default function Navbar() {
         }
       `}</style>
 
-      {/* ── import logo ── NOTE: keep your actual import at top of real file */}
       <nav
         className={`nav-pill${scrolled ? " scrolled" : ""}${mounted ? " in" : ""}`}
         style={{ background: pillBg }}
@@ -332,19 +335,27 @@ export default function Navbar() {
             onKeyDown={e => e.key === "Enter" && go("home")}
           >
             <div className="logo-ring">
-              <img style={{ color: C.primary, fontWeight: 800, fontSize: "0.7rem" ,height:"60px",width:"60px"}} src={TrinLogo} alt="" />
-              {/* <span style={{ color: C.primary, fontWeight: 800, fontSize: "0.7rem" }}>TT</span> */}
+              <img style={{ color: C.primary, fontWeight: 800, fontSize: "0.7rem", height: "60px", width: "60px" }} src={TrinLogo} alt="" />
             </div>
-            <span className="logo-name" style={{ color: textColor }}>Tring Tring</span> 
+            {/* Cursive font + dynamic colour */}
+            <span
+              className="logo-name"
+              style={{
+                color: logoColor,
+                fontFamily: "'Clash Display', sans-serif",
+                fontWeight: 800, // Dancing Script looks better at 700
+              }}
+            >
+              Tring Tring
+            </span>
           </div>
-          
 
           {/* Desktop links */}
           <div className="desk-links">
             {navItems.map((item, i) => (
               <div key={item} style={{ animationDelay: `${0.28 + i * 0.08}s` }}>
                 <RollLink
-                  label={item === "About  Us" ? "About Us" : item.charAt(0).toUpperCase() + item.slice(1)}
+                  label={item === "about" ? "About Us" : item.charAt(0).toUpperCase() + item.slice(1)}
                   onClick={() => go(item)}
                   color={textColor}
                   mounted={mounted}
@@ -377,7 +388,7 @@ export default function Navbar() {
             {navItems.map(item => (
               <div key={item} className="mitem" style={{ width: "100%" }}>
                 <button className="mlink" onClick={() => go(item)} style={{ color: textColor }}>
-                  {item === "About  Us" ? "About Us" : item.charAt(0).toUpperCase() + item.slice(1)}
+                  {item === "about" ? "About Us" : item.charAt(0).toUpperCase() + item.slice(1)}
                 </button>
               </div>
             ))}

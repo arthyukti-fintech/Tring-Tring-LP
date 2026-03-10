@@ -34,78 +34,87 @@ function HowItWorks() {
         className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-10 md:mb-12"
         style={{ color: colors.textDark }}
       >
-        How Trin Trin Works
+        How Tring Tring Works
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-        {/* Card 1 - slide from left */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+
+        {/* Card 1 */}
         <div
-          className={`p-6 md:p-8 rounded-xl shadow transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
-          }`}
+          className={`p-6 md:p-8 rounded-xl shadow transition-all duration-700 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+            }`}
           style={{ backgroundColor: colors.white }}
         >
           <img
-            src="https://thumbs.dreamstime.com/b/business-owner-phone-call-woman-restaurant-tablet-communication-online-order-contact-us-manager-business-owner-360576063.jpg"
+            src="https://img.freepik.com/free-photo/man-using-smartphone-food-ordering-app_23-2148651108.jpg"
             alt="Call Restaurant"
             className="h-[200px] w-full object-cover rounded-lg"
           />
-          <h3
-            className="font-bold text-lg md:text-xl py-2"
-            style={{ color: colors.textDark }}
-          >
-            Call Restaurant
+          <h3 className="font-bold text-lg md:text-xl py-2" style={{ color: colors.textDark }}>
+            ☎️ Call the Restaurant
           </h3>
           <p className="mt-2 text-sm md:text-base" style={{ color: colors.gray }}>
-            Easily call your favorite restaurant directly from the app.
+            Tap the call button and speak directly with the restaurant to place your order.
           </p>
         </div>
 
-        {/* Card 2 - slide from right */}
+        {/* Card 2 */}
         <div
-          className={`p-6 md:p-8 rounded-xl shadow transition-all duration-700 delay-100 ${
-            isVisible ? "opacity-100 translate-x-0" : "opacity-10 translate-x-10"
-          }`}
+          className={`p-6 md:p-8 rounded-xl shadow transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+            }`}
           style={{ backgroundColor: colors.white }}
         >
           <img
-            src="https://img.freepik.com/free-vector/order-now-banner_52683-48697.jpg?semt=ais_hybrid&w=740&q=80"
-            alt="Place Order"
+            src="https://img.freepik.com/free-vector/digital-payment-concept-illustration_114360-1525.jpg"
+            alt="Get Bill"
             className="h-[200px] w-full object-cover rounded-lg"
           />
-          <h3
-            className="font-bold text-lg md:text-xl py-2"
-            style={{ color: colors.textDark }}
-          >
-            Place Order
+          <h3 className="font-bold text-lg md:text-xl py-2" style={{ color: colors.textDark }}>
+            🧾 Get the Bill
           </h3>
           <p className="mt-2 text-sm md:text-base" style={{ color: colors.gray }}>
-            Tell the restaurant what food you want to order.
+            The restaurant sends the final bill to your app after confirming your order.
           </p>
         </div>
 
-        {/* Card 3 - slide from left */}
+        {/* Card 3 */}
         <div
-          className={`p-6 md:p-8 rounded-xl shadow transition-all duration-700 delay-200 ${
-            isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
-          }`}
+          className={`p-6 md:p-8 rounded-xl shadow transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+            }`}
           style={{ backgroundColor: colors.white }}
         >
           <img
-            src="https://static.vecteezy.com/system/resources/thumbnails/070/209/202/small/a-man-holding-a-box-and-giving-the-thumbs-up-free-photo.jpg"
-            alt="Pickup or Delivery"
+            src="https://img.freepik.com/free-vector/online-payment-concept-illustration_114360-5187.jpg"
+            alt="Pay Securely"
             className="h-[200px] w-full object-cover rounded-lg"
           />
-          <h3
-            className="font-bold text-lg md:text-xl py-2"
-            style={{ color: colors.textDark }}
-          >
-            Pickup or Delivery
+          <h3 className="font-bold text-lg md:text-xl py-2" style={{ color: colors.textDark }}>
+            💳 Pay Securely
           </h3>
           <p className="mt-2 text-sm md:text-base" style={{ color: colors.gray }}>
-            Choose whether you want home delivery or pickup.
+            Pay easily through the app once you know the exact price.
           </p>
         </div>
+
+        {/* Card 4 */}
+        <div
+          className={`p-6 md:p-8 rounded-xl shadow transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+            }`}
+          style={{ backgroundColor: colors.white }}
+        >
+          <img
+            src="https://img.freepik.com/free-vector/food-delivery-concept-illustration_114360-1404.jpg"
+            alt="Delivery or Pickup"
+            className="h-[200px] w-full object-cover rounded-lg"
+          />
+          <h3 className="font-bold text-lg md:text-xl py-2" style={{ color: colors.textDark }}>
+            🛵 Choose Delivery or Pickup
+          </h3>
+          <p className="mt-2 text-sm md:text-base" style={{ color: colors.gray }}>
+            Select takeaway, restaurant delivery, or Tring Tring delivery partner.
+          </p>
+        </div>
+
       </div>
 
       {/* Optional: add a subtle fade-in for the heading */}
