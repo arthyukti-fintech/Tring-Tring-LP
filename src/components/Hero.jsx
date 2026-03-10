@@ -297,7 +297,9 @@ function Hero() {
               className="hero-heading"
               style={{ fontSize: "clamp(2.4rem, 5vw, 3.6rem)", margin: 0 }}
             >
-              Order Food With{" "}
+              Real Food.{" "} <br />
+              Real Price.
+              <br />
               <span
                 style={{
                   color: colors.primary,
@@ -305,7 +307,7 @@ function Hero() {
                   position: "relative",
                 }}
               >
-                One Call
+                Just Call.
                 <svg
                   viewBox="0 0 140 10"
                   style={{
@@ -333,14 +335,14 @@ function Hero() {
               className={`hero-p hero-sub${mounted ? " mounted" : ""}`}
               style={{
                 marginTop: "1.5rem",
-                maxWidth: "440px",
+                maxWidth: "520px",
               }}
             >
-              Tring Tring lets you call restaurants directly and place your food
-              order. Choose whether you want home delivery or pick it up
-              yourself.
+              Tring Tring connects you directly with restaurants so you can order food the
+              way it was always meant to be — by talking to them. You confirm your order on
+              the call, receive the bill, pay securely through the app, and get your food
+              delivered safely.
             </p>
-
             <button className={`order-btn hero-btn${mounted ? " mounted" : ""}`}>
               Order Now
             </button>

@@ -3,24 +3,28 @@ import colors from "../theme/colors";
 
 const stats = [
   {
-    value: 70,
-    label: "Faster Ordering",
-    description: "Compared to traditional food apps",
+    icon: "💰",
+    label: "Real Restaurant Prices",
+    description:
+      "You pay the same price the restaurant charges — no inflated menu pricing.",
   },
   {
-    value: 80,
-    label: "Restaurant Partners",
-    description: "500+ restaurants joining soon",
+    icon: "🗣",
+    label: "Talk Before You Order",
+    description:
+      "Speak directly to the restaurant and avoid ordering mistakes.",
   },
   {
-    value: 90,
-    label: "User Interest",
-    description: "10K+ users waiting for launch",
+    icon: "🔒",
+    label: "Safe & Transparent",
+    description:
+      "Every order is confirmed before payment with OTP-secured delivery.",
   },
   {
-    value: 85,
-    label: "Expected Rating",
-    description: "Target customer satisfaction",
+    icon: "🤝",
+    label: "Built for Local Restaurants",
+    description:
+      "We empower restaurants to connect directly with customers without complicated systems.",
   },
 ];
 
@@ -98,7 +102,20 @@ function StatItem({ item, isVisible }) {
 
   return (
     <div className="flex flex-col items-center">
-      <Circle value={currentValue} />
+      <div
+        style={{
+          fontSize: "40px",
+          backgroundColor: `${colors.primary}15`,
+          width: "80px",
+          height: "80px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          borderRadius: "50%",
+        }}
+      >
+        {item.icon}
+      </div>
       <h3
         className="mt-5 text-lg font-semibold"
         style={{ color: colors.textDark }}

@@ -22,11 +22,40 @@ function CTA() {
           Experience simple food ordering with Tring Tring.
         </p>
 
+        {/* TRUST MESSAGE */}
+        <div className="mt-6">
+          <p
+            className="text-base font-semibold"
+            style={{ color: colors.textDark }}
+          >
+            Trusted by Local Restaurants and Food Lovers
+          </p>
+
+          <p
+            className="text-sm mt-2 max-w-xl mx-auto"
+            style={{ color: colors.gray }}
+          >
+            Tring Tring is designed for cities where people value real
+            conversations, honest prices, and reliable delivery.
+          </p>
+        </div>
+
+        {/* CTA BUTTON */}
         <button
           className="mt-8 px-8 md:px-10 py-3 rounded-lg font-semibold text-white transition duration-300"
           style={{ backgroundColor: colors.primary }}
-          onMouseEnter={(e) => (e.target.style.backgroundColor = colors.primaryDark)}
-          onMouseLeave={(e) => (e.target.style.backgroundColor = colors.primary)}
+          onClick={() => {
+            const section = document.getElementById("app-preview");
+            if (section) {
+              section.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+          onMouseEnter={(e) =>
+            (e.target.style.backgroundColor = colors.primaryDark)
+          }
+          onMouseLeave={(e) =>
+            (e.target.style.backgroundColor = colors.primary)
+          }
         >
           Get Started
         </button>

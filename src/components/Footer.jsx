@@ -1,5 +1,5 @@
 import colors from "../theme/colors";
-import logo from "../assets/TrinLogo.png"   
+import logo from "../assets/TrinLogo.png"
 import { Link } from "react-router-dom";
 function Footer() {
   return (
@@ -17,7 +17,7 @@ function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <div
                 className="w-18 h-18 flex items-center justify-center rounded-lg text-white font-bold"
-               
+
               >
                 <img src={logo} alt="Trin Trin Logo" />
               </div>
@@ -29,11 +29,21 @@ function Footer() {
                 Tring Tring
               </h2>
             </div>
+            <div className="mt-3">
+              <p
+                className="text-base font-semibold"
+                style={{ color: colors.textDark }}
+              >
+                Call. Confirm. Pay.
+              </p>
 
-            <p className="text-sm leading-relaxed" style={{ color: colors.gray }}>
-              Tring Tring makes food ordering simple. Call restaurants directly,
-              place your order, and choose pickup or home delivery easily.
-            </p>
+              <p
+                className="text-sm mt-1"
+                style={{ color: colors.gray }}
+              >
+                Food ordering, made simple again.
+              </p>
+            </div>
           </div>
 
           {/* COMPANY */}
@@ -46,7 +56,7 @@ function Footer() {
             </h3>
 
             <ul className="space-y-2 text-sm" style={{ color: colors.gray }}>
-             
+
               <li className="cursor-pointer hover:underline"> <Link to="/about-us">About Us </Link></li>
               <li className="cursor-pointer hover:underline">Careers</li>
               <li className="cursor-pointer hover:underline">Blog</li>
