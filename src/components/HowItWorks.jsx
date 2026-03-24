@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import colors from "../theme/colors";
-import dishes from "../../src/assets/cardDishes.png";
-import customDish from "../assets/customdish.png";
-import GetTheBill from "../assets/GetTheBill.png";
-import Paysecurely from "../assets/Paysecurely.png";
-import delivery from "../assets/delivery.png";
+import dishes from "../../src/assets/cardDishes.jpg";
+import customDish from "../assets/customdish.jpg";
+import GetTheBill from "../assets/GetTheBill.jpg";
+import Paysecurely from "../assets/securebill.jpg";
+import delivery from "../assets/delivery.jpg";
 
 function HowItWorks() {
   const sectionRef = useRef(null);
