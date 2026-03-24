@@ -1,7 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import colors from "../theme/colors";
 import FAQ from "../components/FAQ";
-
+import { sendMessage } from "../redux/slices/messageSlice"
+import { useDispatch, useSelector } from "react-redux";
+import toast from "react-hot-toast";
 const faq = [
   {
     question: "How quickly do you respond to inquiries?",
@@ -22,6 +24,33 @@ const faq = [
 ]
 function ContactUs() {
   const sectionRefs = useRef([]);
+  const dispatch = useDispatch();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const { success, error, message } = useSelector((state) => state.message);
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    dispatch(sendMessage(formData));
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    })
+  };
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -266,7 +295,10 @@ function ContactUs() {
                   Send a Message
                 </h2>
 
-                <form className="glass-card p-8 rounded-xl space-y-5">
+                <form
+                  className="glass-card p-8 rounded-xl space-y-5"
+                  onSubmit={handleSubmit}
+                >
 
                   {/* Name */}
                   <div>
@@ -275,6 +307,9 @@ function ContactUs() {
                     </label>
                     <input
                       type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
                       placeholder="John Doe"
                       className="form-input"
                       required
@@ -288,6 +323,9 @@ function ContactUs() {
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder="john@example.com"
                       className="form-input"
                       required
@@ -301,6 +339,9 @@ function ContactUs() {
                     </label>
                     <input
                       type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
                       placeholder="I have a question about..."
                       className="form-input"
                     />
@@ -313,6 +354,9 @@ function ContactUs() {
                     </label>
                     <textarea
                       rows="5"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       placeholder="Tell us how we can help..."
                       className="form-textarea"
                       required
@@ -335,7 +379,7 @@ function ContactUs() {
         </section>
 
         {/* ===== FAQ SECTION (optional but adds length) ===== */}
-      
+
         <FAQ ref={(el) => (sectionRefs.current[2] = el)} faq={faq} />
 
         {/* ===== SOCIAL MEDIA LINKS ===== */}

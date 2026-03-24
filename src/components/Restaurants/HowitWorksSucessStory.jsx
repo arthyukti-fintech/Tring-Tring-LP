@@ -56,9 +56,9 @@ const howItWorks = [
   },
 ];
 
-const HowitWorksSucessStory = forwardRef(({ howRef, storyRef }) => {
+const HowitWorksSucessStory = forwardRef(({ howRef, storyRef },ref) => {
   return (
-    <div>
+    <div ref={ref}>
 
       {/* HOW IT WORKS */}
       <section

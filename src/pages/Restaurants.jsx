@@ -85,6 +85,16 @@ function Restaurants() {
     return () => observer.disconnect();
   }, []);
 
+  const scrollToForm = () => {
+  const formSection = sectionRefs.current[4]; 
+  if (formSection) {
+    formSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start", 
+    });
+  }
+};
+
   // Helper to assign refs sequentially
   const setRef = (index) => (el) => {
     sectionRefs.current[index] = el;
@@ -243,7 +253,7 @@ function Restaurants() {
               </div>
 
               {/* CTA BUTTON */}
-              <button className="submit-btn">
+              <button className="submit-btn" onClick={scrollToForm}>
                 Join as a Restaurant
               </button>
 

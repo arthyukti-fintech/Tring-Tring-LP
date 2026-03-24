@@ -338,10 +338,7 @@ function Hero() {
                 maxWidth: "520px",
               }}
             >
-              Tring Tring connects you directly with restaurants so you can order food the
-              way it was always meant to be — by talking to them. You confirm your order on
-              the call, receive the bill, pay securely through the app, and get your food
-              delivered safely.
+              Tring Tring connects you directly with restaurants so you can order food and customize your meal exactly the way you like. Simply talk to the restaurant, confirm your order on the call, receive the final bill, pay securely through the app, and get your food delivered safely.
             </p>
             <button className={`order-btn hero-btn${mounted ? " mounted" : ""}`}>
               Order Now
