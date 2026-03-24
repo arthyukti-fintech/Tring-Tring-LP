@@ -3,7 +3,7 @@ import React, { forwardRef } from "react";
 const trustItems = [
   {
     title: "100% Genuine Listings",
-    description: "We verify every restaurant to ensure authenticity.",
+    description: "We verify each and every restaurant to ensure authenticity.",
     icon: "✅",
   },
   {
