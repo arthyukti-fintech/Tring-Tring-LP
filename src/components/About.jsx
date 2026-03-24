@@ -195,9 +195,10 @@ function About() {
                 was built to change that.
               </p>
               <p className="section-sub">
-                By letting customers speak directly with restaurants, we bring back
-                clarity and trust to food ordering while still providing the convenience
-                of digital payments and delivery.
+                By letting customers speak directly with restaurants, Tring Tring allows
+                you to order food and customize your meal exactly the way you like. This
+                brings back clarity and trust to food ordering while still providing the
+                convenience of digital payments and reliable delivery.
               </p>
               <p
                 className="text-lg md:text-xl font-semibold mt-6"
@@ -237,7 +238,7 @@ function About() {
             </h2>
             <div className="space-y-4 text-lg section-sub leading-relaxed">
               <p>
-                Tring Tring was born from a simple observation: ordering food had become
+                Tring Tring was born from hera simple observation: ordering food had become
                 overly complicated. Apps filled with endless menus, hidden fees, and
                 impersonal transactions took away the simple joy of ordering from your
                 favorite local restaurant. We missed the days when you could just call

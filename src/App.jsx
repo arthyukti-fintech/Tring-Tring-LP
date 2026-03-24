@@ -6,12 +6,13 @@ import About from "./components/About"
 import Restaurants from "./pages/Restaurants"
 import ContactUs from "./pages/ContactUs"
 import ScrollToTop from "./components/utilis/ScrollToTop"
-
+import {Toaster} from "react-hot-toast"
 
 function App() {
   return (
     <div className="bg-primary min-h-screen">
       <ScrollToTop/>
+       <Toaster position="top-right" reverseOrder={false} />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
